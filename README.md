@@ -1,6 +1,6 @@
-# 🧠 Git Cheatsheet – Uso diario (Mac · GitHub · GitLab · VS Code)
+# 🧠 Git Cheatsheet – Uso diario (macOS · GitHub · GitLab · VS Code)
 
-Este documento resume los **comandos Git más usados**, el flujo recomendado y tips clave para trabajar con repositorios **personales y corporativos** desde macOS y VS Code.
+Cheatsheet de **comandos Git y atajos** para trabajar desde **macOS**, usando **GitHub (personal)** y **GitLab (corporativo)**, principalmente desde **VS Code y terminal**.
 
 ---
 
@@ -21,7 +21,7 @@ git init
 git branch -M main
 ```
 
-Crear primer commit:
+Primer commit:
 
 ```bash
 git add .
@@ -48,14 +48,14 @@ git push -u origin main
 
 ---
 
-## 🔄 Cambiar remoto existente (muy común)
+## 🔄 Cambiar remoto existente
 
 ```bash
 git remote rename origin old-origin
 git remote add origin NUEVA_URL
 ```
 
-Verificar:
+Ver remotos:
 
 ```bash
 git remote -v
@@ -63,7 +63,7 @@ git remote -v
 
 ---
 
-## 🧑‍💻 Identidad por repositorio (personal vs corporativo)
+## 🧑‍💻 Identidad Git por repositorio
 
 ```bash
 git config user.name "Jairo Valencia"
@@ -92,13 +92,13 @@ ssh -T git@gitlab.com
 ```bash
 git status
 git add .
-git commit -m "Mensaje claro del cambio"
+git commit -m "Mensaje del commit"
 git push
 ```
 
 ---
 
-## 🧩 Staging (stage) explicado
+## 🧩 Stage (staging area)
 
 Agregar archivo específico:
 
@@ -114,24 +114,39 @@ git restore --staged archivo.py
 
 ---
 
-## 🧹 .gitignore (aplicar cambios correctamente)
-
-Si Git ya estaba siguiendo archivos que ahora ignoras:
+## 🧹 Aplicar `.gitignore` cuando ya había archivos trackeados
 
 ```bash
 git rm -r --cached .
 git add .
-git commit -m "Aplicar .gitignore correctamente"
+git commit -m "Aplicar .gitignore"
 ```
 
 ---
 
-## 🌿 Ramas (básico)
+## 🌿 Ramas
+
+Listar ramas:
 
 ```bash
 git branch
+```
+
+Crear y cambiar:
+
+```bash
 git checkout -b nueva-rama
+```
+
+Volver a main:
+
+```bash
 git checkout main
+```
+
+Merge:
+
+```bash
 git merge nueva-rama
 ```
 
@@ -146,7 +161,7 @@ git log --oneline --graph --all
 
 ---
 
-## 🧠 Comandos útiles de diagnóstico
+## 🧠 Diagnóstico rápido
 
 ```bash
 git diff
@@ -165,36 +180,26 @@ git clone git@gitlab.com:GRUPO/REPO.git
 
 ---
 
-## 🧰 Uso desde VS Code
+## 🧰 VS Code (macOS)
 
-* Control de versiones: `⌘ + Shift + G`
-* Commit desde VS Code:
+* Control de versiones:
 
-  * Escribe mensaje
-  * ✔ Commit
-* Push / Pull desde barra inferior
+  ```text
+  ⌘ + Shift + G
+  ```
+
 * Terminal integrada:
 
-```bash
-Ctrl + `
-```
+  ```text
+  Ctrl + `
+  ```
+
+* Commit desde VS Code:
+
+  * Escribir mensaje
+  * ✔ Commit
+  * Push desde la barra inferior
 
 ---
 
-## ⚠️ Buenas prácticas
-
-* No subir credenciales (`.env`, `.json`, `.key`)
-* Usar `.gitignore` siempre
-* Commits pequeños y claros
-* Un repo = un propósito claro
-
----
-
-## 🏁 Nota final
-
-Este cheatsheet está pensado como **guía rápida de referencia**, no como documentación teórica.
-Ideal para volver a Git sin fricción y evitar errores comunes.
-
----
-
-🛡️ *Security & Compliance mindset applied to code.*
+🛡️ *Cheatsheet operativo para trabajo diario en seguridad, compliance y desarrollo.*
